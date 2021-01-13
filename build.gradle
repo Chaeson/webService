@@ -38,4 +38,6 @@ dependencies {
     compile('com.h2database:h2')
     // Web Engine -> Mustache
     compile('org.springframework.boot:spring-boot-starter-mustache')
+    // Oauth
+    compile('org.springframework.boot:spring-boot-starter-oauth2-client')
 }
