@@ -3,6 +3,6 @@
 .idea
 *.class
 *.bin*
-*/bin/*
-*/build/*
+/bin/
+/build/
 application-oauth.yml
