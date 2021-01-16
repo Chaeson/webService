@@ -40,6 +40,8 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-mustache')
     // Oauth
     compile('org.springframework.boot:spring-boot-starter-oauth2-client')
+    // Oauth Test
+    testCompile('org.springframework.security:spring-security-test')
     // JDBC Session 관리
     compile('org.springframework.session:spring-session-jdbc')
 }

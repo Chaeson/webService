@@ -1,9 +1,13 @@
 package com.cjw.springboot.web;
 
+import com.cjw.springboot.config.auth.SecurityConfig;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.FilterType;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -17,7 +21,12 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringRunner.class)
 // Web기능에 중점을 둔 어노테이션이다.
 // @Controller, @ControllerAdvice 등 Controller기능'만'을 사용할 수 있다.
-@WebMvcTest
+// @WebMvcTest -> @Repository, @Service, @Component는 스캔 대상이 아니어서 Test코드에서 Oauth관련 Service를 찾지 못해 에러가 발생한다.
+/** WebMvcTest는 @Configuration은 스캔하지 않는다! **/
+@WebMvcTest(controllers = HelloController.class,
+            excludeFilters = {
+            @ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, classes = SecurityConfig.class)
+            })
 public class HelloControllerTest {
 
     // Bean을 주입.
@@ -26,6 +35,7 @@ public class HelloControllerTest {
     private MockMvc mvc;
 
     @Test
+    @WithMockUser(roles = "USER")
     public void HelloController_리턴테스트() throws Exception{
         String hello="hello";
 
@@ -35,6 +45,7 @@ public class HelloControllerTest {
     }
 
     @Test
+    @WithMockUser(roles = "USER")
     public void helloDto_매핑테스트() throws Exception {
         String name="hello";
         int amount=1000;
