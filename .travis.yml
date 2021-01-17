@@ -43,5 +43,3 @@ notifications:
   email:
     recipients:
       - only9984@gmail.com
-
-osx_image: xcode12.3
