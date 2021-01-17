@@ -14,9 +14,9 @@ cache:
 script: "./gradlew clean build"
 
 before_deploy:
-  - zip -r webservice *
+  - zip -r AmazonWebService *
   - mkdir -p deploy
-  - mv webservice.zip deploy/webservice.zip
+  - mv AmazonWebService.zip deploy/AmazonWebService.zip
 
 deploy:
   - provider: s3
