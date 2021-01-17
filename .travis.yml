@@ -14,9 +14,9 @@ cache:
 script: "./gradlew clean build"
 
 before_deploy:
-  - zip -r webService *
+  - zip -r webservice *
   - mkdir -p deploy
-  - mv webService.zip deploy/webservice.zip
+  - mv webservice.zip deploy/webservice.zip
 
 deploy:
   - provider: s3
@@ -32,9 +32,9 @@ deploy:
     access_key_id: $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY
     bucket: webservice-build-bucket
-    key: webServie.zip
+    key: webservie.zip
     bundle_type: zip
-    application: webservice
+    application: webService
     deployment_group: webservice-group
     region: ap-northeast-2
     wait_until_deployed: true
