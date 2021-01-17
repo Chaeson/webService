@@ -14,9 +14,9 @@ cache:
 script: "./gradlew clean build"
 
 before_deploy:
-  - zip -r webservice *
+  - zip -r AmazonWebServie *
   - mkdir -p deploy
-  - mv webservice.zip deploy/webservice.zip
+  - mv AmazonWebServie.zip deploy/webservice.zip
 
 deploy:
   - provider: s3
@@ -32,7 +32,7 @@ deploy:
     access_key_id: $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY
     bucket: webservice-build-bucket
-    key: webservie.zip
+    key: AmazonWebServie.zip
     bundle_type: zip
     application: webService
     deployment_group: webservice-group
