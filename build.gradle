@@ -44,4 +44,6 @@ dependencies {
     testCompile('org.springframework.security:spring-security-test')
     // JDBC Session 관리
     compile('org.springframework.session:spring-session-jdbc')
+    // MariaDB
+    compile('org.mariadb.jdbc:mariadb-java-client')
 }
