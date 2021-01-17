@@ -11,10 +11,11 @@ cache:
     - '$HOME/.m2/repository'
     - '$HOME/.gradle'
 
-script: "./gradlew clean build'
+script: "./gradlew clean build"
 
 notifications:
   email:
     recipients:
       - only9984@gmail.com
+
 osx_image: xcode12.3
