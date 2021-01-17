@@ -32,7 +32,7 @@ deploy:
     access_key_id: $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY
     bucket: webservice-build-bucket
-    key: AmazonWebServie.zip
+    key: webService.zip
     bundle_type: zip
     application: webService
     deployment_group: webservice-group
