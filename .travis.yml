@@ -28,16 +28,16 @@ deploy:
     acl: private
     local_dir: deploy
     wait_until_deployed: true
-  - provider: codedeploy
-    access_key_id: $AWS_ACCESS_KEY
-    secret_access_key: $AWS_SECRET_KEY
-    bucket: webservice-build-bucket
-    key: AmazonWebServie.zip
-    bundle_type: zip
-    application: webService
-    deployment_group: webservice-group
-    region: ap-northeast-2
-    wait_until_deployed: true
+#  - provider: codedeploy
+#    access_key_id: $AWS_ACCESS_KEY
+#    secret_access_key: $AWS_SECRET_KEY
+#    bucket: webservice-build-bucket
+#    key: AmazonWebServie.zip
+#    bundle_type: zip
+#    application: webService
+#    deployment_group: webservice-group
+#    region: ap-northeast-2
+#    wait_until_deployed: true
 
 notifications:
   email:
