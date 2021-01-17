@@ -34,7 +34,7 @@ deploy:
     bucket: webservice-build-bucket
     key: webServie.zip
     bundle_type: zip
-    application: webService
+    application: webservice
     deployment_group: webservice-group
     region: ap-northeast-2
     wait_until_deployed: true
