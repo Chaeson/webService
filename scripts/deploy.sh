@@ -8,7 +8,7 @@ cp $REPOSITORY/zip/*.jar $REPOSITORY/
 
 echo ">현재 구동중인 어플리케이션 pid "
 
-CURRENT_PID=$(pgrep -fl webService | grep jar | awk '{print $1}')
+CURRENT_PID=$(pgrep -fl webService | grep java | awk '{print $1}')
 
 echo "현재 구동중인 어플리케이션 pid: $CURRENT_PID"
 
@@ -32,4 +32,4 @@ chmod +x $JAR_NAME
 
 echo "> $JAR_NAME 실행"
 
-nohup java -jar -Dspring.config.location=classpath:/application.yml,/home/ec2-user/app/application-oauth.yml,/home/ec2-user/app/application-real-db.yml,classpath:/application-real.yml -Dspring.profiles.active=real $REPOSITORY/$JAR_NAME 2>&1 &
+nohup java -jar -Dspring.config.location=classpath:/application.yml,/home/ec2-user/app/application-oauth.yml,/home/ec2-user/app/application-real-db.yml,classpath:/application-real.yml -Dspring.profiles.active=real $JAR_NAME > $REPOSITORY/nohup.out 2>&1 &
