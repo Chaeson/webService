@@ -20,7 +20,7 @@ apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
 group 'com.cjw'
-version '1.0.1-SNAPSHOT'
+version '1.0.1-SNAPSHOT - '+new Date().format("yyyyMMddHHmmss")
 // 추가
 sourceCompatibility = 1.8
 
